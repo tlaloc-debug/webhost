@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<div id="search1">
+<form method=post action="search.php" >
+  <input style="color:#999999" type="text" name="fname" value="ex: PIC10F200">
+  <input type="submit" value="Search">
+</form> 
+<button onclick="advance()">Advance Search</button>
+</div>
+
+<br>
+
+<div id="search2" style="display:none;" >
+<form method=post action="advance.php" style="display:inline-block;">
+<table>
+<tr>
+    <td>
+    <label for="fname1">Memory:</label><br>
+        <input type="text" name="fname1" value=0><br><br>
+    <label for="fname2">EEPROM:</label><br>
+        <input type="text" name="fname2" value=0><br><br>
+    <label for="fname3">RAM:</label><br>
+        <input type="text" name="fname3" value=0><br><br>
+    <label for="fname4">I/O Pins:</label><br>
+        <input type="text" name="fname4" value=0><br>
+    </td>
+    <td>
+    <label>ADC</label><br>
+        <label for="fname5">Chanels:</label><br>
+            <input type="text" name="fname5" value=0><br>
+        <label for="fname6">Resolution:</label><br>
+            <input type="text" name="fname6" value=0><br><br>
+    <label for="fname7">Comparator:</label><br>
+        <input type="radio" id="0" name="fname7" value=0 checked>
+        <label for="0">0</label><br>
+        <input type="radio" id="1" name="fname7" value=1>
+        <label for="1">1</label><br>
+        <input type="radio" id="2" name="fname7" value=2>
+        <label for="2">2</label><br>
+    </td>
+    <td>
+    <label>Timers:</label><br>
+        <input type="checkbox" id="8" name="fname8" value=1>
+        <label for="8">8-bit</label><br>
+        <input type="checkbox" id="16" name="fname16" value=1>
+        <label for="16">16-bit</label><br><br>  
+    <input type="checkbox" id="serial" name="fname9" value='no'>
+        <label for="fname9">Serial Comm</label><br><br>
+    <label for="fname10">Max Speed:</label><br>
+        <input type="text" name="fname10" value=0><br><br>
+    <input type="checkbox" id="osc" name="fname11" value=1>
+        <label for="osc">Internal OSC</label><br>
+    <input type="submit" value="Search" style="display:inline-block;">
+    </td>
+</tr>
+</table>
+</form> 
+<button onclick="regular()" style="display:inline-block; margin-top:0px;">Regular Search</button>
+</div>
+
+<script>
+    function advance() {
+        var x = document.getElementById("search1");
+        x.style.display = "none";
+        var x = document.getElementById("search2");
+        x.style.display = "block";
+    }
+
+    function regular() {
+        var x = document.getElementById("search1");
+        x.style.display = "block";
+        var x = document.getElementById("search2");
+        x.style.display = "none";
+    }
+</script>
+
+</body>
+</html>
+
