@@ -32,12 +32,58 @@
 </head>
 <body>
 
+<h4>Select a family...</h4>
+
+<form method=post action="searchfamily.php" style="display: inline-block">
+    <input type="text" name="family" value=1 style="display: none;">
+    <input id="monitor11" type="text" name="screen" style="display: none;">
+    <input type="submit" value="PIC10FXXX">
+</form>
+
+<form method=post action="searchfamily.php" style="display: inline-block">
+    <input type="text" name="family" value=2 style="display: none;">
+    <input id="monitor12" type="text" name="screen" style="display: none;">
+    <input type="submit" value="PIC12FXXX">
+</form>
+
+<form method=post action="searchfamily.php" style="display: inline-block">
+    <input type="text" name="family" value=3 style="display: none;">
+    <input id="monitor13" type="text" name="screen" style="display: none;">
+    <input type="submit" value="PIC16C/F5X">
+</form>
+
+<form method=post action="searchfamily.php" style="display: inline-block">
+    <input type="text" name="family" value=4 style="display: none;">
+    <input id="monitor14" type="text" name="screen" style="display: none;">
+    <input type="submit" value="PIC16CXXX">
+</form>
+
+<form method=post action="searchfamily.php" style="display: inline-block">
+    <input type="text" name="family" value=5 style="display: none;">
+    <input id="monitor15" type="text" name="screen" style="display: none;">
+    <input type="submit" value="PIC16FXXX">
+</form>
+
+<form method=post action="searchfamily.php" style="display: inline-block">
+    <input type="text" name="family" value=6 style="display: none;">
+    <input id="monitor16" type="text" name="screen" style="display: none;">
+    <input type="submit" value="PIC18FXXX">
+</form>
+
+<form method=post action="searchfamily.php" style="display: inline-block">
+    <input type="text" name="family" value=7 style="display: none;">
+    <input id="monitor17" type="text" name="screen" style="display: none;">
+    <input type="submit" value="PIC18FXXJXX">
+</form>
+
+<h4>or make a search by PIC name</h4>
+
 <div id="search1">
 <form method=post action="search.php" >
     <input style="color:#999999" type="text" name="fname" value="ex: PIC10F200">
     <input id="monitor1" type="text" name="screen" style="display: none;">
     <input type="submit" value="Search">
-</form> 
+</form> <br>
 <button onclick="advance()">Advance Search</button>
 </div>
 
@@ -96,6 +142,13 @@
 
     document.getElementById("monitor1").value = screen.width;
     document.getElementById("monitor2").value = screen.width;
+    document.getElementById("monitor11").value = screen.width;
+    document.getElementById("monitor12").value = screen.width;
+    document.getElementById("monitor13").value = screen.width;
+    document.getElementById("monitor14").value = screen.width;
+    document.getElementById("monitor15").value = screen.width;
+    document.getElementById("monitor16").value = screen.width;
+    document.getElementById("monitor17").value = screen.width;
 
     function advance() {
         var x = document.getElementById("search1");
